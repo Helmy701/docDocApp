@@ -1,9 +1,7 @@
 import 'package:docdoc/core/routes/routes.dart';
 import 'package:docdoc/core/theming/colors.dart';
-import 'package:docdoc/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:docdoc/core/routes/app_router.dart';
 
 class DocApp extends StatelessWidget {
