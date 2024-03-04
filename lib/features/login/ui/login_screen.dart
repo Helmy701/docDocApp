@@ -1,21 +1,17 @@
 import 'package:docdoc/core/theming/styles.dart';
 import 'package:docdoc/core/widgets/app_text_button.dart';
-import 'package:docdoc/core/widgets/app_text_form_field.dart';
+import 'package:docdoc/features/login/data/models/login_request_body.dart';
+import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/login/ui/widgets/already_have_account_text.dart';
+import 'package:docdoc/features/login/ui/widgets/email_and_password.dart';
+import 'package:docdoc/features/login/ui/widgets/login_block_listener.dart';
 import 'package:docdoc/features/login/ui/widgets/terms_and_conditions_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  bool isObscure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -41,55 +37,32 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 36.h,
             ),
-            Form(
-              child: Column(
-                children: [
-                  const AppTextFormField(hintText: "email"),
-                  SizedBox(
-                    height: 18.h,
+            Column(
+              children: [
+                const EmailAndPassword(),
+                SizedBox(
+                  height: 24.h,
+                ),
+                Align(
+                  alignment: AlignmentDirectional.centerEnd,
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyles.font13BlueRegular,
                   ),
-                  AppTextFormField(
-                    hintText: "password",
-                    isPassword: isObscure,
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isObscure = !isObscure;
-                        });
-                      },
-                      child: Icon(
-                        // color: ColorsTheme.mainBlue,
-                        isObscure ? Icons.visibility_off : Icons.visibility,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 24.h,
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional.centerEnd,
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyles.font13BlueRegular,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 40.h,
-                  ),
-                  AppTextButton(
-                    buttonText: "login",
-                    onPressed: () {},
-                  ),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  const TermsAndConditionsText(),
-                  SizedBox(
-                    height: 60.h,
-                  ),
-                  const AlreadyHaveAccountText(),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 40.h,
+                ),
+                const LoginButton(),
+                SizedBox(
+                  height: 16.h,
+                ),
+                const TermsAndConditionsText(),
+                SizedBox(
+                  height: 60.h,
+                ),
+                const AlreadyHaveAccountText(),
+              ],
             ),
           ],
         ),

@@ -9,16 +9,6 @@ class TextStyles {
     fontWeight: FontWeightHelpler.bold,
     color: Colors.black,
   );
-  static TextStyle font32BlueBold = TextStyle(
-    fontSize: 32.sp,
-    fontWeight: FontWeightHelpler.bold,
-    color: ColorsTheme.mainBlue,
-  );
-  static TextStyle font24BlueBold = TextStyle(
-    fontSize: 24.sp,
-    fontWeight: FontWeightHelpler.bold,
-    color: ColorsTheme.mainBlue,
-  );
   static TextStyle font13BlueRegular = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelpler.regular,
@@ -29,6 +19,22 @@ class TextStyles {
     fontWeight: FontWeightHelpler.semiBold,
     color: ColorsTheme.mainBlue,
   );
+  static TextStyle font14BlueSemiBold = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelpler.semiBold,
+    color: ColorsTheme.mainBlue,
+  );
+  static TextStyle font24BlueBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelpler.bold,
+    color: ColorsTheme.mainBlue,
+  );
+  static TextStyle font32BlueBold = TextStyle(
+    fontSize: 32.sp,
+    fontWeight: FontWeightHelpler.bold,
+    color: ColorsTheme.mainBlue,
+  );
+
   static TextStyle font13DarkBlueMedium = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelpler.medium,
@@ -41,6 +47,11 @@ class TextStyles {
   );
   static TextStyle font14DarkBlueMedium = TextStyle(
     fontSize: 14.sp,
+    fontWeight: FontWeightHelpler.medium,
+    color: ColorsTheme.darkBlue,
+  );
+  static TextStyle font15DarkBlueMedium = TextStyle(
+    fontSize: 15.sp,
     fontWeight: FontWeightHelpler.medium,
     color: ColorsTheme.darkBlue,
   );
