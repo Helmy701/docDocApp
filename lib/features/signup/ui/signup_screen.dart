@@ -1,4 +1,3 @@
-import 'package:docdoc/features/signup/data/models/signup_request_body.dart';
 import 'package:docdoc/features/signup/logic/cubit/signup_cubit.dart';
 import 'package:docdoc/features/signup/ui/widgets/sign_up_block_listener.dart';
 import 'package:docdoc/features/signup/ui/widgets/signup_form_data.dart';
