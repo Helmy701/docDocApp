@@ -95,7 +95,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
               hasUpperCase: hasUpperCase,
               hasNumber: hasNumber,
               hasSpecialCharacter: hasSpecialCharacter,
-              hasMinLengh: hasMinLength,
+              hasMinLength: hasMinLength,
             ),
           ],
         ));

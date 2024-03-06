@@ -1,13 +1,9 @@
 import 'package:docdoc/core/theming/styles.dart';
-import 'package:docdoc/core/widgets/app_text_button.dart';
-import 'package:docdoc/features/login/data/models/login_request_body.dart';
-import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
-import 'package:docdoc/features/login/ui/widgets/already_have_account_text.dart';
+import 'package:docdoc/features/login/ui/widgets/dont_have_account_text.dart';
 import 'package:docdoc/features/login/ui/widgets/email_and_password.dart';
-import 'package:docdoc/features/login/ui/widgets/login_block_listener.dart';
+import 'package:docdoc/features/login/ui/widgets/login_button.dart';
 import 'package:docdoc/features/login/ui/widgets/terms_and_conditions_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -61,7 +57,7 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                   height: 60.h,
                 ),
-                const AlreadyHaveAccountText(),
+                const DontHaveAccountText(),
               ],
             ),
           ],

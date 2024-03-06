@@ -3,7 +3,6 @@ import 'package:docdoc/core/routes/routes.dart';
 import 'package:docdoc/core/theming/colors.dart';
 import 'package:docdoc/core/theming/styles.dart';
 import 'package:docdoc/core/widgets/app_text_button.dart';
-import 'package:docdoc/features/login/data/models/login_request_body.dart';
 import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/login/logic/cubit/login_state.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +30,8 @@ class LoginButton extends StatelessWidget {
           },
           success: (loginResponse) {
             context.pop();
-            context.pushNamed(Routes.homeScreen);
+            context.pushNamedAndRemoveUntil(
+                Routes.homeScreen, (route) => false);
           },
           error: (error) {
             setupErrorState(context, error);
@@ -75,11 +75,14 @@ class LoginButton extends StatelessWidget {
 
   void validateThenDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-      context.read<LoginCubit>().emitLoginStates(
-            LoginRequestBody(
-                email: context.read<LoginCubit>().emailController.text,
-                password: context.read<LoginCubit>().passwordController.text),
-          );
+      context.read<LoginCubit>().emitLoginStates();
     }
+    // if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+    //   context.read<LoginCubit>().emitLoginStates(
+    //         LoginRequestBody(
+    //             email: context.read<LoginCubit>().emailController.text,
+    //             password: context.read<LoginCubit>().passwordController.text),
+    //       );
+    // }
   }
 }

@@ -8,7 +8,7 @@ class PasswordValidation extends StatelessWidget {
   final bool hasUpperCase;
   final bool hasSpecialCharacter;
   final bool hasNumber;
-  final bool hasMinLengh;
+  final bool hasMinLength;
 
   const PasswordValidation(
       {super.key,
@@ -16,7 +16,7 @@ class PasswordValidation extends StatelessWidget {
       required this.hasUpperCase,
       required this.hasSpecialCharacter,
       required this.hasNumber,
-      required this.hasMinLengh});
+      required this.hasMinLength});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class PasswordValidation extends StatelessWidget {
         SizedBox(
           height: 2.h,
         ),
-        buildValidationRow('At least 8 characters long', hasMinLengh),
+        buildValidationRow('At least 8 characters long', hasMinLength),
         SizedBox(
           height: 2.h,
         ),
