@@ -13,6 +13,8 @@ class AppTextFormField extends StatelessWidget {
   final bool? isPassword;
   final Widget? suffixIcon;
   final Color? backgroundColor;
+  final TextEditingController? controller;
+  final Function(String?)? validator;
 
   const AppTextFormField({
     super.key,
@@ -25,11 +27,14 @@ class AppTextFormField extends StatelessWidget {
     this.suffixIcon,
     required this.hintText,
     this.backgroundColor,
+    this.controller,
+    this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       decoration: InputDecoration(
         isDense: true, //to make me control with padding
         contentPadding: contentPadding ??
@@ -53,6 +58,21 @@ class AppTextFormField extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(16.r),
             ),
+        focusedErrorBorder: focuseBorder ??
+            OutlineInputBorder(
+              borderSide: const BorderSide(
+                color: Colors.red,
+                width: 1.3,
+              ),
+              borderRadius: BorderRadius.circular(16.r),
+            ),
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.r),
+        ),
         filled: true,
         fillColor: backgroundColor ?? ColorsTheme.offWhite,
         hintStyle: hintStyle ?? TextStyles.font14LightGreyRegular,
@@ -65,6 +85,9 @@ class AppTextFormField extends StatelessWidget {
       ),
       obscureText: isPassword ?? false,
       style: TextStyles.font14DarkBlueMedium,
+      validator: (value) {
+        return validator!(value);
+      },
     );
   }
 }
