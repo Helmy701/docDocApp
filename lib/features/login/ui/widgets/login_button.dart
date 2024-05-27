@@ -29,7 +29,7 @@ class LoginButton extends StatelessWidget {
                     ));
           },
           success: (loginResponse) {
-            context.pop();
+            //TODO context.pop();
             context.pushNamedAndRemoveUntil(
                 Routes.homeScreen, (route) => false);
           },

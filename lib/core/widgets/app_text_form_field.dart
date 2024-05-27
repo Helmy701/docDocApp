@@ -35,6 +35,7 @@ class AppTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      cursorColor: ColorsTheme.mainBlue,
       decoration: InputDecoration(
         isDense: true, //to make me control with padding
         contentPadding: contentPadding ??

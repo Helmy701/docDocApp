@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1045357360737",
+    "project_id": "docdoc-distirbution",
+    "storage_bucket": "docdoc-distirbution.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045357360737:android:c9e545aa279b30afe21c20",
+        "android_client_info": {
+          "package_name": "com.example.docdoc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAUlVvrwU7qBzPXAf_v6IRP18S8bMDKBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
