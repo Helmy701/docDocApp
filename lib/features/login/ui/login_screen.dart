@@ -14,55 +14,57 @@ class LoginScreen extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-          body: SafeArea(
-              child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
-        child: ListView(
-          children: [
-            Text(
-              'Welcome Back',
-              style: TextStyles.font24BlueBold,
-            ),
-            SizedBox(
-              height: 8.h,
-            ),
-            Text(
-              'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
-              style: TextStyles.font14GreyRegular,
-            ),
-            SizedBox(
-              height: 36.h,
-            ),
-            Column(
+        body: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
+            child: ListView(
               children: [
-                const EmailAndPassword(),
-                SizedBox(
-                  height: 24.h,
-                ),
-                Align(
-                  alignment: AlignmentDirectional.centerEnd,
-                  child: Text(
-                    'Forgot Password?',
-                    style: TextStyles.font13BlueRegular,
-                  ),
+                Text(
+                  'Welcome Back',
+                  style: TextStyles.font24BlueBold,
                 ),
                 SizedBox(
-                  height: 40.h,
+                  height: 8.h,
                 ),
-                const LoginButton(),
+                Text(
+                  'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
+                  style: TextStyles.font14GreyRegular,
+                ),
                 SizedBox(
-                  height: 16.h,
+                  height: 36.h,
                 ),
-                const TermsAndConditionsText(),
-                SizedBox(
-                  height: 60.h,
+                Column(
+                  children: [
+                    const EmailAndPassword(),
+                    SizedBox(
+                      height: 24.h,
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional.centerEnd,
+                      child: Text(
+                        'Forgot Password?',
+                        style: TextStyles.font13BlueRegular,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40.h,
+                    ),
+                    const LoginButton(),
+                    SizedBox(
+                      height: 16.h,
+                    ),
+                    const TermsAndConditionsText(),
+                    SizedBox(
+                      height: 60.h,
+                    ),
+                    const DontHaveAccountText(),
+                  ],
                 ),
-                const DontHaveAccountText(),
               ],
             ),
-          ],
+          ),
         ),
-      ))),
+      ),
     );
   }
 }

@@ -8,8 +8,8 @@ platform :android do
     # gradle(task: "test")
     firebase_app_distribution(
       app: "1:1045357360737:android:c9e545aa279b30afe21c20",
-      firebase_cli_token: "1//032QJ129KkOWsCgYIARAAGAMSNwF-L9Ir7PG197LILDuc88ox8iJjnuvQMZ5NEvtip45XaVP5rEbc9J7zXxN3RoDOt-xSCiERZRE",
-      # android_artifact_type: "APK",
+      firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
+      android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
       testers: "ahmedhelmy1632000@gmail.com",
       release_notes: "first Fastlane Firebase distribution"
