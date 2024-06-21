@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:docdoc/core/networking/api_service.dart';
 import 'package:docdoc/core/networking/dio_factory.dart';
+import 'package:docdoc/features/home/data/apis/home_api_service.dart';
+import 'package:docdoc/features/home/data/repos/home_repo.dart';
+import 'package:docdoc/features/home/logic/home_cubit.dart';
 import 'package:docdoc/features/login/data/repos/login_repo.dart';
 import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
 import 'package:docdoc/features/signup/data/repos/signup_repo.dart';
@@ -9,7 +12,7 @@ import 'package:get_it/get_it.dart';
 
 // registerLazy => create one instance
 // registerFactory => when I want to use this thing more than one time and everytime I will creat object in every usage
-// registerFactory => when
+// registerFactory => every time create new instance
 
 final getIt = GetIt.instance;
 Future<void> setupGetIt() async {
@@ -24,4 +27,9 @@ Future<void> setupGetIt() async {
   //signup
   getIt.registerLazySingleton<SignupRepo>(() => SignupRepo(getIt()));
   getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
+
+  //home
+  getIt.registerLazySingleton<HomeAPIService>(() => HomeAPIService(dio));
+  getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
+  // getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt()));
 }
