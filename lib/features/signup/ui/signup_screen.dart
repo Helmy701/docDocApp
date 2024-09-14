@@ -26,7 +26,7 @@ class SignupScreen extends StatelessWidget {
               children: [
                 Text(
                   'Create Account',
-                  style: TextStyles.font24BlueBold,
+                  style: TextStyles.font24GreenBold,
                 ),
                 SizedBox(
                   height: 8.h,

@@ -15,12 +15,12 @@ class DontHaveAccountText extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-            text: 'Already have an account?',
+            text: 'don\'d have an account?',
             style: TextStyles.font13DarkBlueRegular,
           ),
           TextSpan(
             text: ' Sign Up',
-            style: TextStyles.font13BlueSemiBold,
+            style: TextStyles.font13GreenSemiBold,
             recognizer: TapGestureRecognizer()
               ..onTap = () => context.pushReplacementNamed(Routes.signupScreen),
           ),

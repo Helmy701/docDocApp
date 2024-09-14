@@ -15,13 +15,13 @@ class GetStartedButton extends StatelessWidget {
         context.pushNamed(Routes.loginScreen);
       },
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(ColorsTheme.mainBlue),
+        backgroundColor: WidgetStateProperty.all(ColorsTheme.mainGreen),
         tapTargetSize: MaterialTapTargetSize
             .shrinkWrap, //remove default space (to make me I'm the fully control in the button)
-        minimumSize: MaterialStateProperty.all(
+        minimumSize: WidgetStateProperty.all(
           Size(double.infinity, 52.h),
         ),
-        shape: MaterialStateProperty.all(
+        shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.r),
           ),

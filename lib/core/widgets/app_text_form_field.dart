@@ -35,7 +35,7 @@ class AppTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      cursorColor: ColorsTheme.mainBlue,
+      cursorColor: ColorsTheme.mainGreen,
       decoration: InputDecoration(
         isDense: true, //to make me control with padding
         contentPadding: contentPadding ??
@@ -46,7 +46,7 @@ class AppTextFormField extends StatelessWidget {
         focusedBorder: focuseBorder ??
             OutlineInputBorder(
               borderSide: const BorderSide(
-                color: ColorsTheme.mainBlue,
+                color: ColorsTheme.mainGreen,
                 width: 1.3,
               ),
               borderRadius: BorderRadius.circular(16.r),
@@ -79,9 +79,9 @@ class AppTextFormField extends StatelessWidget {
         hintStyle: hintStyle ?? TextStyles.font14LightGreyRegular,
         hintText: hintText,
         suffixIcon: suffixIcon,
-        suffixIconColor: MaterialStateColor.resolveWith((states) =>
-            states.contains(MaterialState.focused)
-                ? ColorsTheme.mainBlue
+        suffixIconColor: WidgetStateColor.resolveWith((states) =>
+            states.contains(WidgetState.focused)
+                ? ColorsTheme.mainGreen
                 : ColorsTheme.grey),
       ),
       obscureText: isPassword ?? false,

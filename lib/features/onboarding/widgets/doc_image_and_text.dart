@@ -11,7 +11,10 @@ class DocImageAndText extends StatelessWidget {
     return Stack(
       alignment: Alignment.topCenter,
       children: [
-        SvgPicture.asset('assets/svgs/docdoc_logo_low_opacity.svg'),
+        Opacity(
+            opacity: .5,
+            child: Image.asset(
+                'assets/images/doctoer_finder_logo_with_opacity.png')),
         Container(
           foregroundDecoration: BoxDecoration(
             gradient: LinearGradient(
@@ -32,7 +35,7 @@ class DocImageAndText extends StatelessWidget {
           child: Text(
             'Best Doctor\nAppointment App',
             textAlign: TextAlign.center,
-            style: TextStyles.font32BlueBold.copyWith(height: 1.4),
+            style: TextStyles.font32GreenBold.copyWith(height: 1.4),
           ),
         ),
       ],

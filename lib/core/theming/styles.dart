@@ -111,4 +111,25 @@ class TextStyles {
     fontWeight: FontWeightHelpler.medium,
     color: Colors.white,
   );
+
+  static TextStyle font32GreenBold = TextStyle(
+    fontSize: 32.sp,
+    fontWeight: FontWeightHelpler.bold,
+    color: ColorsTheme.mainGreen,
+  );
+  static TextStyle font24GreenBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelpler.bold,
+    color: ColorsTheme.mainGreen,
+  );
+  static TextStyle font13GreenSemiBold = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelpler.semiBold,
+    color: ColorsTheme.mainGreen,
+  );
+  static TextStyle font13GreenRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelpler.regular,
+    color: ColorsTheme.mainGreen,
+  );
 }

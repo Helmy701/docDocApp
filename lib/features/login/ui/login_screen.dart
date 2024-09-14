@@ -21,7 +21,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Text(
                   'Welcome Back',
-                  style: TextStyles.font24BlueBold,
+                  style: TextStyles.font24GreenBold,
                 ),
                 SizedBox(
                   height: 8.h,
@@ -43,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                       alignment: AlignmentDirectional.centerEnd,
                       child: Text(
                         'Forgot Password?',
-                        style: TextStyles.font13BlueRegular,
+                        style: TextStyles.font13GreenRegular,
                       ),
                     ),
                     SizedBox(
