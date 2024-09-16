@@ -19,7 +19,7 @@ class DoctorsSpecialityListViewItem extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 28.r,
-            backgroundColor: ColorsTheme.whiteWithBlueTint,
+            backgroundColor: ColorsTheme.whiteGreen,
             child: SvgPicture.asset(
               'assets/svgs/general_speciality.svg',
               height: 40.h,

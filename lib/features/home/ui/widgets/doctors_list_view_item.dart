@@ -1,4 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:docdoc/core/theming/colors.dart';
 import 'package:docdoc/core/theming/styles.dart';
 import 'package:docdoc/features/home/data/models/specialization_response_model.dart';
 import 'package:flutter/material.dart';
@@ -25,10 +25,10 @@ class DoctorsListViewItem extends StatelessWidget {
           //   errorWidget: (context, url, error) => Icon(Icons.error),
           // ),
           ClipRRect(
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(40.r),
             child: Image.network(
-              width: 110.w,
-              height: 120.h,
+              width: 80.w,
+              height: 80.h,
               "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrjSOOy6TdcJk7Z9AeodUiH8iVOB_NZ4hAw&s",
               fit: BoxFit.cover,
             ),
@@ -42,26 +42,67 @@ class DoctorsListViewItem extends StatelessWidget {
               children: [
                 Text(
                   doctorsModel?.name ?? 'Named',
-                  style: TextStyles.font18DarkBlueBold,
+                  style: TextStyles.font15DarkBlueMedium,
                   overflow: TextOverflow.ellipsis,
                 ),
                 SizedBox(
                   height: 5.h,
                 ),
                 Text(
-                  "${doctorsModel?.degree} | ${doctorsModel?.phone}",
+                  doctorsModel?.degree ?? "degree",
                   style: TextStyles.font12GreyMedium,
                 ),
+
                 SizedBox(
                   height: 5.h,
                 ),
                 Text(
-                  doctorsModel?.email ?? "Email",
+                  // "${doctorsModel?.degree} | ${doctorsModel?.phone}",
+                  "${doctorsModel?.phone}",
                   style: TextStyles.font12GreyMedium,
                 ),
+                // Text(
+                //   doctorsModel?.email ?? "Email",
+                //   style: TextStyles.font12GreyMedium,
+                // ),
               ],
             ),
           ),
+          Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    'Fees',
+                    style: TextStyles.font13GreyRegular,
+                  ),
+                  Text(
+                    '  \$50.99',
+                    style: TextStyles.font13GreenSemiBold,
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              SizedBox(
+                height: 30.h,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: ColorsTheme.mainGreen,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.r))),
+                  child: Text(
+                    'Book Now',
+                    style: TextStyles.font14WhiteRegular,
+                  ),
+                ),
+              )
+            ],
+          )
         ],
       ),
     );

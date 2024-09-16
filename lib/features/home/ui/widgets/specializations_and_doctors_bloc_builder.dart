@@ -2,6 +2,7 @@ import 'package:docdoc/features/home/logic/home_cubit.dart';
 import 'package:docdoc/features/home/logic/home_state.dart';
 import 'package:docdoc/features/home/ui/widgets/doctors_list_view.dart';
 import 'package:docdoc/features/home/ui/widgets/doctors_speciality_list_view.dart';
+import 'package:docdoc/features/home/ui/widgets/popular_doctors_see_all.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,8 +33,9 @@ class SpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
                   DoctorsSpecialityListView(
                     specializationsList: specializationsList ?? [],
                   ),
+                  const PopularDoctorsSeeAll(),
                   SizedBox(
-                    height: 8.h,
+                    height: 10.h,
                   ),
                   DoctorsListView(
                     doctorsList: specializationsList?.first?.doctorsList,

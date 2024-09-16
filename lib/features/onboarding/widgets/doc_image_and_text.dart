@@ -1,7 +1,6 @@
 import 'package:docdoc/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class DocImageAndText extends StatelessWidget {
   const DocImageAndText({super.key});
@@ -26,7 +25,10 @@ class DocImageAndText extends StatelessWidget {
                 end: Alignment.topCenter,
                 stops: const [0.14, 0.4]),
           ),
-          child: Image.asset('assets/images/onboarding_doctor.png'),
+          child: Image.asset(
+            'assets/images/onboardin_doctor_finder.png',
+            height: 500.h,
+          ),
         ),
         Positioned(
           bottom: 30.h,

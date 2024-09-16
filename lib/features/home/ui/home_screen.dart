@@ -1,4 +1,4 @@
-import 'package:docdoc/features/home/ui/widgets/doctors_blue_container.dart';
+import 'package:docdoc/features/home/ui/widgets/doctors_green_conatiner.dart';
 import 'package:docdoc/features/home/ui/widgets/doctors_speciality_see_all.dart';
 import 'package:docdoc/features/home/ui/widgets/home_top_bar.dart';
 import 'package:docdoc/features/home/ui/widgets/specializations_and_doctors_bloc_builder.dart';
@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const HomeTopBar(),
-              const DoctorsBlueContainer(),
+              const DoctorsGreenContainer(),
               SizedBox(
                 height: 24.h,
               ),

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class ColorsTheme {
   static const Color mainBlue = Color(0xFF247CFF);
-  static const Color mainGreen = Color(0xFF4D9289);
+  static const Color mainGreen = Color(0xFF3C887E);
   // static const Color greenText = Color.fromARGB(255, 69, 129, 121);
 
-  static const Color secondGreen = Color(0xFF438C83);
+  static const Color secondGreen = Color(0xFF418B82);
 
   static const Color liteGreen = Color(0xFFE9F2F1);
   static const Color whiteGreen = Color(0xFFF0F5F5);

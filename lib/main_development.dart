@@ -9,7 +9,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   setupGetIt();
   await ScreenUtil.ensureScreenSize();
   await checkIfLoggedInUser();
@@ -23,9 +22,9 @@ void main() async {
 checkIfLoggedInUser() async {
   String? userToken =
       await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
-  if (!userToken.isNullOrEmpty()) {
-    isLoggedInUser = true;
-  } else {
+  if (userToken.isNullOrEmpty()) {
     isLoggedInUser = false;
+  } else {
+    isLoggedInUser = true;
   }
 }

@@ -9,13 +9,13 @@ class DoctorsSpecialitySeeAll extends StatelessWidget {
     return Row(
       children: [
         Text(
-          'Doctor Speciality',
+          'Find Your Doctor',
           style: TextStyles.font18DarkBlueSemiBold,
         ),
         const Spacer(),
         Text(
           'See All',
-          style: TextStyles.font13BlueRegular,
+          style: TextStyles.font13GreenRegular,
         )
       ],
     );
