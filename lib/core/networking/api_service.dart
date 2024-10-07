@@ -5,6 +5,7 @@ import 'package:docdoc/features/login/data/models/login_response.dart';
 import 'package:docdoc/features/signup/data/models/signup_request_body.dart';
 import 'package:docdoc/features/signup/data/models/signup_response.dart';
 import 'package:retrofit/http.dart';
+import 'package:retrofit/retrofit.dart';
 part 'api_service.g.dart';
 
 // rerofit anotation
