@@ -1,4 +1,5 @@
 import 'package:docdoc/core/networking/api_error_handler.dart';
+import 'package:docdoc/core/networking/api_error_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'api_result.freezed.dart';
@@ -7,5 +8,5 @@ part 'api_result.freezed.dart';
 // <T> means any type
 abstract class ApiResult<T> with _$ApiResult<T> {
   const factory ApiResult.success(T data) = Success<T>;
-  const factory ApiResult.failure(ErrorHandler errorHandler) = failure<T>;
+  const factory ApiResult.failure(ApiErrorModel apiErrorModel) = failure<T>;
 }

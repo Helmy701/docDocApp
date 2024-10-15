@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:docdoc/core/helpers/constants.dart';
 import 'package:docdoc/core/helpers/shared_preference_helper.dart';
+import 'package:docdoc/core/networking/api_error_model.dart';
 import 'package:docdoc/core/networking/dio_factory.dart';
 import 'package:docdoc/features/login/data/models/login_request_body.dart';
 import 'package:docdoc/features/login/data/repos/login_repo.dart';
@@ -16,17 +17,17 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController passwordController = TextEditingController();
 
   void emitLoginStates() async {
-    emit(const LoginState.loading());
+    emit(const LoginState.loginLoading());
     final response = await _loginRepo.login(LoginRequestBody(
         email: emailController.text, password: passwordController.text));
 
     response.when(success: (loginResponse) async {
       await saveUserToken(loginResponse.userData?.token ?? '');
       emit(
-        LoginState.success(loginResponse),
+        LoginState.loginSuccess(loginResponse),
       );
-    }, failure: (error) {
-      emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
+    }, failure: (apiErrorModel) {
+      emit(LoginState.loginError(apiErrorModel));
     });
   }
 

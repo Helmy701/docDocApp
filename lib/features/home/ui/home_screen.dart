@@ -1,8 +1,7 @@
+import 'package:docdoc/core/theming/styles.dart';
 import 'package:docdoc/features/home/ui/widgets/doctors_list/doctors_bloc_builder.dart';
 import 'package:docdoc/features/home/ui/widgets/doctors_green_conatiner.dart';
-import 'package:docdoc/features/home/ui/widgets/doctors_speciality_see_all.dart';
 import 'package:docdoc/features/home/ui/widgets/home_top_bar.dart';
-import 'package:docdoc/features/home/ui/widgets/popular_doctors_see_all.dart';
 import 'package:docdoc/features/home/ui/widgets/speciality_list/specializations_bloc_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +16,7 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Container(
           width: double.infinity,
-          margin: const EdgeInsets.fromLTRB(20, 16, 20, 28),
+          margin: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 28.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -26,12 +25,18 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: 24.h,
               ),
-              const DoctorsSpecialitySeeAll(),
+              Text(
+                'Find Your Doctor',
+                style: TextStyles.font18DarkBlueSemiBold,
+              ),
               SizedBox(
                 height: 18.h,
               ),
               const SpecializationsBlocBuilder(),
-              const PopularDoctorsSeeAll(),
+              Text(
+                'Popular Doctors',
+                style: TextStyles.font18DarkBlueSemiBold,
+              ),
               SizedBox(
                 height: 8.h,
               ),

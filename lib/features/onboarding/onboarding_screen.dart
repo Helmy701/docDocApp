@@ -30,7 +30,7 @@ class OnBoardingScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Manage and schedule all of your medical appointments easily\nwith Docdoc to get a new experience.',
+                    'Manage and schedule all of your medical appointments easily\nwith Doctor Finder to get a new experience.',
                     style: TextStyles.font13GreyRegular,
                     textAlign: TextAlign.center,
                   ),

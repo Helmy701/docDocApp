@@ -1,8 +1,6 @@
 import 'package:docdoc/features/home/logic/home_cubit.dart';
 import 'package:docdoc/features/home/logic/home_state.dart';
-import 'package:docdoc/features/home/ui/widgets/doctors_list/doctors_list_view.dart';
 import 'package:docdoc/features/home/ui/widgets/doctors_list/doctors_shimmers_loading.dart';
-import 'package:docdoc/features/home/ui/widgets/popular_doctors_see_all.dart';
 import 'package:docdoc/features/home/ui/widgets/speciality_list/speciality_list_view.dart';
 import 'package:docdoc/features/home/ui/widgets/speciality_list/speciality_shimmer_loading.dart';
 import 'package:flutter/material.dart';

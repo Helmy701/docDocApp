@@ -1,4 +1,5 @@
 import 'package:docdoc/core/helpers/extensions.dart';
+import 'package:docdoc/core/networking/api_error_model.dart';
 import 'package:docdoc/core/routes/routes.dart';
 import 'package:docdoc/features/signup/logic/cubit/signup_cubit.dart';
 import 'package:flutter/material.dart';
@@ -14,10 +15,12 @@ class SignupBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SignupCubit, SignupState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error,
+          current is SignupLoading ||
+          current is SignupSuccess ||
+          current is SignupError,
       listener: (context, state) {
         state.whenOrNull(
-          loading: () {
+          signupLoading: () {
             showDialog(
               context: context,
               builder: (context) => const Center(
@@ -27,12 +30,12 @@ class SignupBlocListener extends StatelessWidget {
               ),
             );
           },
-          success: (signupResponse) {
+          signupSuccess: (signupResponse) {
             context.pop();
             showSuccessDialog(context);
           },
-          error: (error) {
-            setupErrorState(context, error);
+          signupError: (apiErrorModel) {
+            setupErrorState(context, apiErrorModel);
           },
         );
       },
@@ -73,7 +76,7 @@ class SignupBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
     context.pop();
     showDialog(
       context: context,
@@ -84,7 +87,7 @@ class SignupBlocListener extends StatelessWidget {
           size: 32,
         ),
         content: Text(
-          error,
+          apiErrorModel.getAllErrorsMessages(),
           style: TextStyles.font15DarkBlueMedium,
         ),
         actions: [

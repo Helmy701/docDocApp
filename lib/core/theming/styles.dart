@@ -81,6 +81,27 @@ class TextStyles {
     fontWeight: FontWeightHelpler.bold,
     color: ColorsTheme.darkBlue,
   );
+  static TextStyle font20DarkBlueBold = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelpler.bold,
+    color: ColorsTheme.darkBlue,
+  );
+
+  static TextStyle font22DarkBlueBold = TextStyle(
+    fontSize: 22.sp,
+    fontWeight: FontWeightHelpler.bold,
+    color: ColorsTheme.darkBlue,
+  );
+  static TextStyle font24DarkBlueBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelpler.bold,
+    color: ColorsTheme.darkBlue,
+  );
+  static TextStyle font26DarkBlueSemiBold = TextStyle(
+    fontSize: 26.sp,
+    fontWeight: FontWeightHelpler.semiBold,
+    color: ColorsTheme.darkBlue,
+  );
   static TextStyle font12GreyRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelpler.regular,
@@ -107,6 +128,12 @@ class TextStyles {
     color: ColorsTheme.lighterGrey,
   );
 
+  static TextStyle font13WhiteRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelpler.regular,
+    color: Colors.white,
+  );
+
   static TextStyle font14WhiteRegular = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelpler.regular,
@@ -129,10 +156,9 @@ class TextStyles {
     color: Colors.white,
   );
   static TextStyle font20WhiteSemiBold = TextStyle(
-    fontSize: 20.sp,
-    fontWeight: FontWeightHelpler.semiBold,
-    color: Colors.white,
-  );
+      fontSize: 20.sp,
+      fontWeight: FontWeightHelpler.semiBold,
+      color: Colors.white);
 
   static TextStyle font32GreenBold = TextStyle(
     fontSize: 32.sp,
@@ -144,8 +170,18 @@ class TextStyles {
     fontWeight: FontWeightHelpler.bold,
     color: ColorsTheme.mainGreen,
   );
+  static TextStyle font20GreenSemiBold = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelpler.semiBold,
+    color: ColorsTheme.mainGreen,
+  );
   static TextStyle font13GreenSemiBold = TextStyle(
     fontSize: 13.sp,
+    fontWeight: FontWeightHelpler.semiBold,
+    color: ColorsTheme.mainGreen,
+  );
+  static TextStyle font16GreenSemiBold = TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeightHelpler.semiBold,
     color: ColorsTheme.mainGreen,
   );

@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:docdoc/core/networking/api_error_model.dart';
 import 'package:docdoc/features/signup/data/models/signup_request_body.dart';
 import 'package:docdoc/features/signup/data/repos/signup_repo.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class SignupCubit extends Cubit<SignupState> {
   TextEditingController genderController = TextEditingController();
 
   void emitSignupStates() async {
-    emit(const SignupState.loading());
+    emit(const SignupState.signupLoading());
     final response = await _signupRepo.signup(SignupRequestBody(
         name: nameController.text,
         email: emailController.text,
@@ -30,13 +31,11 @@ class SignupCubit extends Cubit<SignupState> {
     response.when(
       success: (signupResponse) {
         emit(
-          SignupState.success(signupResponse),
+          SignupState.signupSuccess(signupResponse),
         );
       },
-      failure: (error) {
-        emit(
-          SignupState.error(error: error.apiErrorModel.message ?? ''),
-        );
+      failure: (apiErrorModel) {
+        emit(SignupState.signupError(apiErrorModel));
       },
     );
   }

@@ -1,4 +1,5 @@
 import 'package:docdoc/core/helpers/extensions.dart';
+import 'package:docdoc/core/networking/api_error_model.dart';
 import 'package:docdoc/core/routes/routes.dart';
 import 'package:docdoc/core/theming/colors.dart';
 import 'package:docdoc/core/theming/styles.dart';
@@ -15,11 +16,13 @@ class LoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error,
+          current is LoginLoading ||
+          current is LoginSuccess ||
+          current is LoginError,
       listener: (context, state) {
         // when one of these states or null
         state.whenOrNull(
-          loading: () {
+          loginLoading: () {
             showDialog(
                 context: context,
                 builder: (context) => const Center(
@@ -28,13 +31,13 @@ class LoginButton extends StatelessWidget {
                       ),
                     ));
           },
-          success: (loginResponse) {
+          loginSuccess: (loginResponse) {
             //TODO context.pop();
             context.pushNamedAndRemoveUntil(
                 Routes.homeScreen, (route) => false);
           },
-          error: (error) {
-            setupErrorState(context, error);
+          loginError: (apiErrorModel) {
+            setupErrorState(context, apiErrorModel);
           },
         );
       },
@@ -47,7 +50,7 @@ class LoginButton extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
     context.pop();
     showDialog(
       context: context,
@@ -58,7 +61,7 @@ class LoginButton extends StatelessWidget {
           size: 32,
         ),
         content: Text(
-          error,
+          apiErrorModel.getAllErrorsMessages(),
           style: TextStyles.font15DarkBlueMedium,
         ),
         actions: [

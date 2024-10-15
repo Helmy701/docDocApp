@@ -1,5 +1,6 @@
 import 'package:docdoc/core/theming/colors.dart';
 import 'package:docdoc/core/theming/styles.dart';
+import 'package:docdoc/features/doctor_details/ui/doctor_details_screen.dart';
 import 'package:docdoc/features/home/data/models/specialization_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -26,10 +27,10 @@ class DoctorsListViewItem extends StatelessWidget {
           // ),
           ClipRRect(
             borderRadius: BorderRadius.circular(40.r),
-            child: Image.network(
+            child: Image.asset(
               width: 80.w,
               height: 80.h,
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrjSOOy6TdcJk7Z9AeodUiH8iVOB_NZ4hAw&s",
+              "assets/images/onboardin_doctor_finder.png",
               fit: BoxFit.cover,
             ),
           ),
@@ -90,7 +91,12 @@ class DoctorsListViewItem extends StatelessWidget {
               SizedBox(
                 height: 30.h,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (_) => DoctorDetailsScreen(
+                              doctorModel: doctorsModel,
+                            )));
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorsTheme.mainGreen,
                       shape: RoundedRectangleBorder(

@@ -2,7 +2,6 @@ import 'package:docdoc/core/theming/colors.dart';
 import 'package:docdoc/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomeTopBar extends StatelessWidget {
   const HomeTopBar({super.key});
@@ -26,9 +25,19 @@ class HomeTopBar extends StatelessWidget {
         ),
         const Spacer(),
         CircleAvatar(
-          radius: 24.r,
-          backgroundColor: ColorsTheme.whiteGreen,
-          child: SvgPicture.asset("assets/svgs/notification_button.svg"),
+          radius: 23.r,
+          backgroundColor: ColorsTheme.mainGreen,
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            radius: 22.r,
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.logout_rounded,
+                size: 28.r,
+              ),
+            ),
+          ),
         ),
       ],
     );
